@@ -18,12 +18,12 @@ class Order
         orders.make_selection(order_number, quantity)
     end
 
-    def display_bill
+    def display_order
         orders.users_order
     end
 
     def calculate_price
-        @current_order = orders.users_order.map {|choice| choice[:price]}.inject(0, :+)
+        @current_order = orders.users_order.map {|choice| choice[:price] * choice[:quantity] }.inject(0, :+)
         return "The total cost is £#{current_order}"
     end
 

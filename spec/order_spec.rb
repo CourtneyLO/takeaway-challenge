@@ -20,13 +20,13 @@ describe Order do
       end
 
       it 'should test that all items and prices ordered are returned' do
-        expect(order.display_bill).to include {users_order}
+        expect(order.display_order).to include {users_order}
       end
 
       it 'should test that the calculate price returns the total of the bill' do
-        order.order_food(1,1)
-        order.order_food(3,3)
-        order.order_food(7,5)
+        order.order_food(0,1)
+        order.order_food(2,3)
+        order.order_food(6,5)
         expect(order.calculate_price).to eq "The total cost is £53"
       end
     end
