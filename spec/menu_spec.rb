@@ -3,10 +3,6 @@ require 'menu'
 describe Menu do
     subject(:menu) { described_class.new }
 
-    it "should test that menu responds to view menu" do
-      expect(menu).to respond_to(:make_selection).with(2).arguments
-    end
-
     it "should test that make selection returns an array" do
       expect(menu.make_selection(1, 2)).to be_kind_of Array
     end

@@ -5,10 +5,6 @@ describe Order do
     let(:menu) { double :menu }
     let(:sms) {double :sms, message: "Thank you, your order is on its way" }
 
-      it 'should test that checkout responds to display bill' do
-        expect(order).to respond_to :display_bill
-      end
-
       it 'should test that a new menu is returned when see menu is called' do
         expect(order.see_menu).to be_kind_of Menu
       end
