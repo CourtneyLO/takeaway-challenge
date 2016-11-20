@@ -32,6 +32,7 @@ Courtneys-MBP:takeaway-challenge courtneyosborn$ pry
 => #<Order:0x007f9a344f4338 @current_order=nil, @menu_class=Menu>
 
 [3] pry(main)> order.see_menu
+
 => #<Menu:0x007f9a344a63e0
 
  @our_menu=
@@ -63,48 +64,78 @@ Courtneys-MBP:takeaway-challenge courtneyosborn$ pry
  @users_order=[]>
 
 [4] pry(main)> order.order_food(3,3)
-=> [{:number3=>3, :starter3=>:carpaccio, :price=>6}, {:number3=>3, :starter3=>:carpaccio, :price=>6}, {:number3=>3, :starter3=>:carpaccio, :price=>6}]
+
+=> [{:number3=>3, :starter3=>:carpaccio, :price=>6},
+
+{:number3=>3,:starter3=>:carpaccio, :price=>6},
+
+{:number3=>3, :starter3=>:carpaccio, :price=>6}]
 
 [5] pry(main)> order.order_food(4,1)
 => [{:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number4=>4, :main1=>:steak, :price=>12}]
 
 [6] pry(main)> order.order_food(5,1)
+
 => [{:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number4=>4, :main1=>:steak, :price=>12},
+
  {:number5=>5, :main2=>:chicken, :price=>11}]
 
 [7] pry(main)> order.order_food(6,1)
+
 => [{:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number4=>4, :main1=>:steak, :price=>12},
+
  {:number5=>5, :main2=>:chicken, :price=>11},
+
  {:number6=>6, :main3=>:salad, :price=>10}]
 
 [8] pry(main)> order.order_food(10,3)
+
 => [{:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number3=>3, :starter3=>:carpaccio, :price=>6},
+
  {:number4=>4, :main1=>:steak, :price=>12},
+
  {:number5=>5, :main2=>:chicken, :price=>11},
+
  {:number6=>6, :main3=>:salad, :price=>10},
+
  {:number10=>10, :drinks1=>:wine, :price=>8},
+
  {:number10=>10, :drinks1=>:wine, :price=>8},
+
  {:number10=>10, :drinks1=>:wine, :price=>8}]
 
 [12] pry(main)> order.calculate_price
+
 => "The total cost is £75"
 
 [16] pry(main)> order.send_sms("Your order is on its way")
-=> <Twilio::REST::Message @path=/2010-04-01/Accounts/AC931d30987b9634469ecc155be9841575/Messages/SM82585e84b85f46ccb859da922a15ddf9>
 
-Task
------
+=> <Twilio::REST::Message
+
+@path=/2010-04-01/Accounts/AC931d30987b9634469ecc155be9841575/Messages/SM82585e84b85f46c
+cb859da922a15ddf9>
 
 
 Task
