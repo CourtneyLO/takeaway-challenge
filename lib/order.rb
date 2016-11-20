@@ -3,28 +3,28 @@ require_relative 'sms.rb'
 
 class Order
 
-    attr_accessor :orders, :menu_class
+    attr_accessor :selection, :menu_class
 
     def initialize(menu_Klass)
         @menu_class = menu_Klass
-        @current_order = nil
+        @current_order_total = nil
     end
 
-    def see_menu
-        @orders = @menu_class.new
+    def view_menu
+        @selection = @menu_class.new
     end
 
     def order_food(order_number, quantity)
-        orders.make_selection(order_number, quantity)
+        selection.make_selection(order_number, quantity)
     end
 
     def display_order
-        orders.users_order
+        selection.users_order
     end
 
     def calculate_price
-        @current_order = orders.users_order.map {|choice| choice[:price] * choice[:quantity] }.inject(0, :+)
-        return "The total cost is £#{current_order}"
+        @current_order_total = selection.users_order.map {|choice| choice[:price] * choice[:quantity] }.inject(0, :+)
+        return "The total cost is £#{current_order_total}"
     end
 
     def send_sms(message)
@@ -35,10 +35,10 @@ class Order
 
     private
 
-    attr_accessor :current_order
+    attr_accessor :current_order_total
 
     def price_calculated?
-        @current_order = current_order
+        @current_order_total = current_order_total
     end
 
 end

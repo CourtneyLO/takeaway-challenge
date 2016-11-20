@@ -12,7 +12,7 @@ class Sms
       def send_message(message)
           @client.account.messages.create({
              from:'+441292388043',
-             to: '+445647372254',   #not my real numer 
+             to: '+447752938394',   #not my real numer 
              body: message
              })
       end

@@ -22,7 +22,7 @@ class Menu
   def make_selection(order_number, quantity)
       order1 = our_menu.values_at(order_number)
       order1.last[:quantity] = quantity
-      (users_order << order1).flatten!
+      (users_order << order1).flatten!.last
   end
 
 end

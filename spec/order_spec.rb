@@ -6,13 +6,13 @@ describe Order do
     let(:sms) {double :sms, message: "Thank you, your order is on its way" }
 
       it 'should test that a new menu is returned when see menu is called' do
-        expect(order.see_menu).to be_kind_of Menu
+        expect(order.view_menu).to be_kind_of Menu
       end
 
     context "orders and prices" do
 
       before do
-        order.see_menu
+        order.view_menu
       end
 
       it 'should test that ordering food returns food ordered' do
@@ -29,18 +29,18 @@ describe Order do
         order.order_food(6,5)
         expect(order.calculate_price).to eq "The total cost is £53"
       end
-    end
 
     describe '#send sms' do
       it 'should test that an sms is sent' do
         expect(order).to receive(:send_message).with("Thank you, your order is on its way")
         order.send_message("Thank you, your order is on its way")
       end
+    end
 
       context 'Raise error' do
 
         it 'should raise an error if order has not been calculated' do
-          order.see_menu
+          order.view_menu
           expect{ order.send_sms("Your order has been dispatched") }.to raise_error "Cannot send sms: Amount has not yet been calculated"
         end
       end
