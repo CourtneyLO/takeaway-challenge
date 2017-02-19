@@ -33,7 +33,7 @@ Courtneys-MBP:takeaway-challenge courtneyosborn$ pry
 => #<Order:0x007f9a344f4338 @current_order=nil, @menu_class=Menu>
 
 
-[3] pry(main)> order.see_menu
+[3] pry(main)> order.view_menu
 
 => #<Menu:0x007f9a344a63e0
 
