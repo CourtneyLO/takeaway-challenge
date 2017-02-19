@@ -11,7 +11,7 @@ class Order
     end
 
     def view_menu
-        @selection = @menu_class.new
+        @selection = menu_class.new
     end
 
     def order_food(order_number, quantity)

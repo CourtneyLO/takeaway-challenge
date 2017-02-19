@@ -20,7 +20,7 @@ Order the food you like.
 
 This program allows you to see a menu, order food, calculate the price and then send a message to indicate that the order is on its way  
 
-IRB
+PRY
 -----
 Courtneys-MBP:takeaway-challenge courtneyosborn$ pry
 
